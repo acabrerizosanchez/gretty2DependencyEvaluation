@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'war'
+    id 'org.gretty' version '2.3.1'
+}
+
+
+
+group 'com.webapp.sample'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+gretty {
+    // supported values:
+    // 'jetty7', 'jetty8', 'jetty9', 'jetty9.3', 'jetty9.4', 'tomcat7', 'tomcat8'
+    servletContainer = 'tomcat8'
+    httpPort = 8585
+}
